@@ -1,0 +1,76 @@
+
+import java.util.HashMap;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+/**
+ *
+ * @author cisco
+ */
+public class Manuelito extends JFrame{
+    private JLabel lblNombre, lblApellido, lblId, lblTotal, lblTexto;
+    private JTextField txtNombre, txtApellido , txtId , txtTotal;
+    private JButton btnAdd, btnCalcular;
+    private HashMap<String, Double> preciosFrutas;
+    private double total;
+    public Manuelito(){
+        setTitle("AAAAAAAA");
+        setSize(1500,1000);
+        setLayout(null);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        btnAdd = new JButton("Ola");
+        btnAdd.setBounds(670,202,100,20);
+        add(btnAdd);
+        
+        lblNombre = new JLabel("Nombre ");
+        lblNombre.setBounds(270, 40, 60, 60);
+        add(lblNombre);
+        
+        lblApellido = new JLabel("Apellido ");
+        lblApellido.setBounds(600, 40, 60, 60);
+        add(lblApellido);
+        
+        lblId = new JLabel("Numero de ID ");
+        lblId.setBounds(1000, 40, 80, 60);
+        add(lblId);
+        
+        txtNombre = new JTextField();
+        txtNombre.setBounds(270, 100, 100, 40);
+        add(txtNombre );
+        
+        txtApellido = new JTextField();
+        txtApellido.setBounds(600, 100, 100, 40);
+        add(txtApellido );
+        
+        txtId = new JTextField();
+        txtId.setBounds(1000,100,100,40);
+        add(txtId);
+      
+        lblTotal = new JLabel("Total:");
+        lblTotal.setBounds(20, 180, 100, 20);
+        add(lblTotal);
+        lblTotal.setVisible(false);
+        
+        btnAdd.addActionListener(e -> mostrarDatos());
+        
+        
+    }
+    private void mostrarDatos() {
+        String nombre = txtNombre.getText();
+        double id = Double.parseDouble(txtId.getText());
+        //preciosFrutas.put(nombre, id);
+        
+        lblTexto = new JLabel("Ae agrego el id "+id);
+        add(lblTexto);
+        lblTexto.setBounds(200, 200, 200, 100);
+       // System.out.println("Se agrego el id "+id);
+    }
+    public static void main(String[] args) {
+        // Crear una instancia de la ventana
+        Manuelito m = new Manuelito();
+    }
+}
